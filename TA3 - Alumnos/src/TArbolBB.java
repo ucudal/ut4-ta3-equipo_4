@@ -1,5 +1,4 @@
 
-
 public class TArbolBB<T> implements IArbolBB<T> {
 
     private TElementoAB<T> raiz;
@@ -73,7 +72,7 @@ public class TArbolBB<T> implements IArbolBB<T> {
 
     @Override
     public Lista<T> inorden() {
-        Lista <T> listaInorden = null;
+        Lista<T> listaInorden = null;
         if (!esVacio()) {
             listaInorden = new Lista<T>();
             raiz.inOrden(listaInorden);
@@ -84,17 +83,19 @@ public class TArbolBB<T> implements IArbolBB<T> {
 
     @Override
     public int obtenerAltura() {
-        if(raiz == null){
+        if (raiz == null) {
             return -1;
-        }
-        else{
+        } else {
             return raiz.obtenerAltura();
         }
     }
 
     @Override
     public int obtenerTamanio() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (esVacio()) {
+            return 0;
+        }
+        return raiz.obtenerTamanio();
     }
 
     @Override
@@ -106,7 +107,5 @@ public class TArbolBB<T> implements IArbolBB<T> {
     public int obtenerCantidadHojas() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-   
 
 }

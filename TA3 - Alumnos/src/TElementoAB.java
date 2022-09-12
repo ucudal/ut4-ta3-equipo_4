@@ -1,3 +1,4 @@
+
 public class TElementoAB<T> implements IElementoAB<T> {
 
     private Comparable etiqueta;
@@ -7,7 +8,7 @@ public class TElementoAB<T> implements IElementoAB<T> {
 
     /**
      * @param unaEtiqueta
-     * @param unosDatos 
+     * @param unosDatos
      */
     @SuppressWarnings("unchecked")
     public TElementoAB(Comparable unaEtiqueta, T unosDatos) {
@@ -77,13 +78,13 @@ public class TElementoAB<T> implements IElementoAB<T> {
      */
     @Override
     public String inOrden() {
-          throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-   @Override
+    @Override
     public void inOrden(Lista<T> unaLista) {
-          throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
@@ -114,18 +115,26 @@ public class TElementoAB<T> implements IElementoAB<T> {
         this.hijoDer = elemento;
     }
 
-    
-
     @Override
     public int obtenerAltura() {
-        if(this.hijoDer == null && this.hijoIzq == null){
-            return 0;
+        int altIzq = -1;
+        int altDer = -1;
+        if (this.hijoIzq != null)
+        {
+            altIzq = this.hijoIzq.obtenerAltura();
         }
-        return 1 + max(this.hijoIzq.obtenerAltura(), this.hijoDer.obtenerAltura());     
+
+        if (this.hijoDer != null)
+        {
+            altDer = this.hijoDer.obtenerAltura();
+        }
+
+        return Math.max(altDer, altIzq) + 1;
     }
     
-    int max(int i, int j){
-        if(i <= j){
+
+    int max(int i, int j) {
+        if (i <= j) {
             return j;
         }
         return i;
@@ -133,7 +142,14 @@ public class TElementoAB<T> implements IElementoAB<T> {
 
     @Override
     public int obtenerTamanio() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int cont = 0;
+        if (this.hijoIzq != null) {
+            cont += this.hijoIzq.obtenerTamanio();
+        }
+        if (this.hijoDer != null) {
+            cont += this.hijoDer.obtenerTamanio();
+        }
+        return cont + 1;
     }
 
     @Override
@@ -146,7 +162,4 @@ public class TElementoAB<T> implements IElementoAB<T> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-   
-
-   	
 }

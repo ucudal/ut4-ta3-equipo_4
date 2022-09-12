@@ -18,87 +18,87 @@ public class TArbolBBTest {
     /**
      * Test of insertar method, of class TArbolBB.
      */
-//    @Test
-//    public void testInsertar() {
-//        System.out.println("insertar");
-//        TArbolBB instance = new TArbolBB();
-//        boolean expResult = false;
-//        boolean result = instance.insertar(null);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of buscar method, of class TArbolBB.
-//     */
-//    @Test
-//    public void testBuscar() {
-//        System.out.println("buscar");
-//        Comparable unaEtiqueta = null;
-//        TArbolBB instance = new TArbolBB();
-//        TElementoAB expResult = null;
-//        TElementoAB result = instance.buscar(unaEtiqueta);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of inOrden method, of class TArbolBB.
-//     */
-//    @Test
-//    public void testInOrden() {
-//        System.out.println("inOrden");
-//        TArbolBB instance = new TArbolBB();
-//        String expResult = "";
-//        String result = instance.inOrden();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of esVacio method, of class TArbolBB.
-//     */
-//    @Test
-//    public void testEsVacio() {
-//        System.out.println("esVacio");
-//        TArbolBB instance = new TArbolBB();
-//        boolean expResult = false;
-//        boolean result = instance.esVacio();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of vaciar method, of class TArbolBB.
-//     */
-//    @Test
-//    public void testVaciar() {
-//        System.out.println("vaciar");
-//        TArbolBB instance = new TArbolBB();
-//        boolean expResult = false;
-//        boolean result = instance.vaciar();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of inorden method, of class TArbolBB.
-//     */
-//    @Test
-//    public void testInorden() {
-//        System.out.println("inorden");
-//        TArbolBB instance = new TArbolBB();
-//        Lista expResult = null;
-//        Lista result = instance.inorden();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+    @Test
+    public void testInsertar() {
+        System.out.println("insertar");
+        TArbolBB instance = new TArbolBB();
+        boolean expResult = false;
+        boolean result = instance.insertar(null);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of buscar method, of class TArbolBB.
+     */
+    @Test
+    public void testBuscar() {
+        System.out.println("buscar");
+        Comparable unaEtiqueta = null;
+        TArbolBB instance = new TArbolBB();
+        TElementoAB expResult = null;
+        TElementoAB result = instance.buscar(unaEtiqueta);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of inOrden method, of class TArbolBB.
+     */
+    @Test
+    public void testInOrden() {
+        System.out.println("inOrden");
+        TArbolBB instance = new TArbolBB();
+        String expResult = "";
+        String result = instance.inOrden();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of esVacio method, of class TArbolBB.
+     */
+    @Test
+    public void testEsVacio() {
+        System.out.println("esVacio");
+        TArbolBB instance = new TArbolBB();
+        boolean expResult = false;
+        boolean result = instance.esVacio();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of vaciar method, of class TArbolBB.
+     */
+    @Test
+    public void testVaciar() {
+        System.out.println("vaciar");
+        TArbolBB instance = new TArbolBB();
+        boolean expResult = false;
+        boolean result = instance.vaciar();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of inorden method, of class TArbolBB.
+     */
+    @Test
+    public void testInorden() {
+        System.out.println("inorden");
+        TArbolBB instance = new TArbolBB();
+        Lista expResult = null;
+        Lista result = instance.inorden();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
 
     /**
      * Test of obtenerAltura method, of class TArbolBB.
@@ -220,47 +220,150 @@ public class TArbolBBTest {
         assertEquals(expResult, result);
     }
 
+    @Test
+    public void testTamanioVacio() {
+        TArbolBB arbol = new TArbolBB();
+        int expResult = 0;
+        assertEquals(expResult, arbol.obtenerTamanio());
+    }
+
+    @Test
+    public void testTamanioUno() {
+        TArbolBB arbol = new TArbolBB();
+        TElementoAB e1 = new TElementoAB<>(5, "Cinco");
+        arbol.insertar(e1);
+        int expResult = 1;
+        assertEquals(expResult, arbol.obtenerTamanio());
+    }
+
+    @Test
+    public void testTamanioDosA() {
+        TArbolBB arbol = new TArbolBB();
+        TElementoAB e1 = new TElementoAB<>(5, "Cinco");
+        TElementoAB e2 = new TElementoAB<>(3, "Tres");
+        arbol.insertar(e1);
+        arbol.insertar(e2);
+        int expResult = 2;
+        assertEquals(expResult, arbol.obtenerTamanio());
+    }
+
+    @Test
+    public void testTamanioDosB() {
+        TArbolBB arbol = new TArbolBB();
+        TElementoAB e1 = new TElementoAB<>(3, "Tres");
+        TElementoAB e2 = new TElementoAB<>(5, "Cinco");
+        arbol.insertar(e1);
+        arbol.insertar(e2);
+        int expResult = 2;
+        assertEquals(expResult, arbol.obtenerTamanio());
+    }
+
+    @Test
+    public void testTamanioTresA() {
+        TArbolBB arbol = new TArbolBB();
+        TElementoAB e0 = new TElementoAB<>(1, "Uno"); // 1
+        TElementoAB e1 = new TElementoAB<>(3, "Tres");//     3
+        TElementoAB e2 = new TElementoAB<>(5, "Cinco");//        5
+        arbol.insertar(e0);
+        arbol.insertar(e1);
+        arbol.insertar(e2);
+        int expResult = 3;
+        assertEquals(expResult, arbol.obtenerTamanio());
+    }
+
+    @Test
+    public void testTamanioTresB() {
+        TArbolBB arbol = new TArbolBB();
+        TElementoAB e0 = new TElementoAB<>(1, "Uno");//   1
+        TElementoAB e1 = new TElementoAB<>(3, "Tres");//     5
+        TElementoAB e2 = new TElementoAB<>(5, "Cinco");//  3
+        arbol.insertar(e0);
+        arbol.insertar(e2);
+        arbol.insertar(e1);
+        int expResult = 3;
+        assertEquals(expResult, arbol.obtenerTamanio());
+    }
+
+    @Test
+    public void testTamanioTresC() {
+        TArbolBB arbol = new TArbolBB();
+        TElementoAB e0 = new TElementoAB<>(1, "Uno");//  3
+        TElementoAB e1 = new TElementoAB<>(3, "Tres");//1 5
+        TElementoAB e2 = new TElementoAB<>(5, "Cinco");
+        arbol.insertar(e1);
+        arbol.insertar(e0);
+        arbol.insertar(e2);
+        int expResult = 3;
+        assertEquals(expResult, arbol.obtenerTamanio());
+    }
+
+    @Test
+    public void testTamanioTresD() { // 
+        TArbolBB arbol = new TArbolBB();
+        TElementoAB e0 = new TElementoAB<>(1, "Uno");    //  5
+        TElementoAB e1 = new TElementoAB<>(3, "Tres");   //1
+        TElementoAB e2 = new TElementoAB<>(5, "Cinco");  //  3
+        arbol.insertar(e2);
+        arbol.insertar(e0);
+        arbol.insertar(e1);
+        int expResult = 3;
+        assertEquals(expResult, arbol.obtenerTamanio());
+    }
+
+    @Test
+    public void testTamanioTresE() {
+        TArbolBB arbol = new TArbolBB();
+        TElementoAB e0 = new TElementoAB<>(1, "Uno");//         5
+        TElementoAB e1 = new TElementoAB<>(3, "Tres");//    3
+        TElementoAB e2 = new TElementoAB<>(5, "Cinco");//1
+        arbol.insertar(e2);
+        arbol.insertar(e1);
+        arbol.insertar(e0);
+        int expResult = 3;
+        assertEquals(expResult, arbol.obtenerTamanio());
+    }
+
     /**
      * Test of obtenerTamanio method, of class TArbolBB.
      */
-//    @Test
-//    public void testObtenerTamanio() {
-//        System.out.println("obtenerTamanio");
-//        TArbolBB instance = new TArbolBB();
-//        int expResult = 0;
-//        int result = instance.obtenerTamanio();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of obtenerNivel method, of class TArbolBB.
-//     */
-//    @Test
-//    public void testObtenerNivel() {
-//        System.out.println("obtenerNivel");
-//        Comparable unaEtiqueta = null;
-//        TArbolBB instance = new TArbolBB();
-//        int expResult = 0;
-//        int result = instance.obtenerNivel(unaEtiqueta);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of obtenerCantidadHojas method, of class TArbolBB.
-//     */
-//    @Test
-//    public void testObtenerCantidadHojas() {
-//        System.out.println("obtenerCantidadHojas");
-//        TArbolBB instance = new TArbolBB();
-//        int expResult = 0;
-//        int result = instance.obtenerCantidadHojas();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+    @Test
+    public void testObtenerTamanio() {
+        System.out.println("obtenerTamanio");
+        TArbolBB instance = new TArbolBB();
+        int expResult = 0;
+        int result = instance.obtenerTamanio();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of obtenerNivel method, of class TArbolBB.
+     */
+    @Test
+    public void testObtenerNivel() {
+        System.out.println("obtenerNivel");
+        Comparable unaEtiqueta = null;
+        TArbolBB instance = new TArbolBB();
+        int expResult = 0;
+        int result = instance.obtenerNivel(unaEtiqueta);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of obtenerCantidadHojas method, of class TArbolBB.
+     */
+    @Test
+    public void testObtenerCantidadHojas() {
+        System.out.println("obtenerCantidadHojas");
+        TArbolBB instance = new TArbolBB();
+        int expResult = 0;
+        int result = instance.obtenerCantidadHojas();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
 
 }

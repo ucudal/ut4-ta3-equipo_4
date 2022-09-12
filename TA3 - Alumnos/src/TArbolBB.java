@@ -84,7 +84,12 @@ public class TArbolBB<T> implements IArbolBB<T> {
 
     @Override
     public int obtenerAltura() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(raiz == null){
+            return -1;
+        }
+        else{
+            return raiz.obtenerAltura();
+        }
     }
 
     @Override
